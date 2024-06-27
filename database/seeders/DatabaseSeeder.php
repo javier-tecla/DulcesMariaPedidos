@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DecoracionsSeeder::class);
         $this->call(CakeMedidasSeeder::class);
+        $this->call(MediosContactosSeeder::class);
         
     }
 }

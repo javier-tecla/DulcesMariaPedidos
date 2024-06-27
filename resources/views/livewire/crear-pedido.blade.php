@@ -163,10 +163,10 @@
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
         <option>-- Seleccione --</option>
-        {{-- @foreach ($medio_contactos as $contacto)
+        @foreach ($medio_contactos as $contacto)
             <option value="{{ $contacto->id }}">{{$contacto->contacto}}</option>
             
-        @endforeach --}}
+        @endforeach
         </select>
 
         <x-input-error :messages="$errors->get('me_contacto')" class="mt-2" />
