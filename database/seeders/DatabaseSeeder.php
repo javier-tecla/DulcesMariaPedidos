@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(DecoracionSeeder::class);
+        $this->call(DecoracionsSeeder::class);
+        $this->call(CakeMedidasSeeder::class);
+        
     }
 }

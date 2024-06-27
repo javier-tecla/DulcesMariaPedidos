@@ -72,10 +72,10 @@
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
-            {{-- @foreach ($medida_cakes as $medida)
+            @foreach ($cake_medidas as $medida)
                 <option value="{{ $medida->id }}">{{$medida->medida}}</option>
                 
-            @endforeach --}}
+            @endforeach
         </select>
 
         <x-input-error :messages="$errors->get('medida')" class="mt-2" />
