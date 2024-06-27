@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [PedidoController::class, 'index'])->middleware(['auth', 'verified'])->name('pedidos.index');
+Route::get('/pedidos/create', [PedidoController::class, 'create'])->middleware(['auth', 'verified'])->name('pedidos.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

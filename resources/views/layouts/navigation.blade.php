@@ -15,6 +15,10 @@
                     <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index')">
                         {{ __('Mis Pedidos') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('pedidos.create')" :active="request()->routeIs('pedidos.create')">
+                        {{ __('Crear Pedidos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -70,6 +74,10 @@
             <x-responsive-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index')">
                 {{ __('Mis Pedidos') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('pedidos.create')" :active="request()->routeIs('pedidos.create')">
+                {{ __('Crear Pedidos') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -81,7 +89,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -91,7 +99,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Cerrar Sesión') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
