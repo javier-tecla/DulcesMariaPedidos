@@ -53,10 +53,10 @@
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
-            {{-- @foreach ($decoracions as $decoracion)
+            @foreach ($decoracions as $decoracion)
                 <option value="{{ $decoracion->id }}">{{$decoracion->decoracion}}</option>
                 
-            @endforeach --}}
+            @endforeach
         </select>
         
 

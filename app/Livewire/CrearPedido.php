@@ -3,11 +3,18 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Decoracion;
+
 
 class CrearPedido extends Component
 {
     public function render()
     {
-        return view('livewire.crear-pedido');
+        // Consultar BD
+        $decoracions = Decoracion::all();
+
+        return view('livewire.crear-pedido', [
+            'decoracions' => $decoracions,
+        ]);
     }
 }
