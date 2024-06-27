@@ -6,7 +6,7 @@
                 id="cake" 
                 class="block mt-1 w-full" 
                 type="text" 
-                name="cake" 
+                wire:model="cake" 
                 :value="old('cake')"
                 Placeholder="Nombre del Cake" 
         />
@@ -21,7 +21,7 @@
                 id="sabor" 
                 class="block mt-1 w-full" 
                 type="text" 
-                name="sabor" 
+                wire:model="sabor" 
                 :value="old('sabor')"
                 Placeholder="Sabor" 
         />
@@ -36,7 +36,7 @@
                 id="relleno" 
                 class="block mt-1 w-full" 
                 type="text" 
-                name="relleno" 
+                wire:model="relleno" 
                 :value="old('relleno')"
                 Placeholder="Relleno" 
         />
@@ -49,7 +49,7 @@
         <x-input-label for="decoracion" :value="__('Decoración de Cake')" />
         <select
                 id="decoracion" 
-                name="decoracion" 
+                wire:model="decoracion" 
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
@@ -68,7 +68,7 @@
 
         <select
                 id="cake_size" 
-                name="cake_size" 
+                wire:model="cake_size" 
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
@@ -88,7 +88,7 @@
                 id="fecha_entrega" 
                 class="block mt-1 w-full" 
                 type="date" 
-                name="fecha_entrega" 
+                wire:model="fecha_entrega" 
                 :value="old('fecha_entrega')" 
         />
 
@@ -102,7 +102,7 @@
                 id="cliente" 
                 class="block mt-1 w-full" 
                 type="text" 
-                name="cliente" 
+                wire:model="cliente" 
                 :value="old('cliente')"
                 Placeholder="Nombre del Cliente" 
         />
@@ -117,7 +117,7 @@
                 id="telefono" 
                 class="block mt-1 w-full" 
                 type="tel" 
-                name="telefono" 
+                wire:model="telefono" 
                 :value="old('telefono')"
                 Placeholder="Telefono de Contacto" 
         />
@@ -132,9 +132,10 @@
                 id="precio" 
                 class="block mt-1 w-full" 
                 type="number" 
-                name="precio" 
+                wire:model="precio" 
                 :value="old('precio')"
-                Placeholder="Precio" 
+                Placeholder="Precio"
+                min="0" step="0.01" 
         />
 
         <x-input-error :messages="$errors->get('precio')" class="mt-2" />
@@ -147,7 +148,7 @@
                 id="hora" 
                 class="block mt-1 w-full" 
                 type="time" 
-                name="hora" 
+                wire:model="hora" 
                 :value="old('hora')"
                 Placeholder="Hora de Entrega" 
         />
@@ -159,7 +160,7 @@
         <x-input-label for="me_contacto" :value="__('Me Contacto por')" />
         <select
                 id="me_contacto" 
-                name="me_contacto" 
+                wire:model="me_contacto" 
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
         <option>-- Seleccione --</option>
