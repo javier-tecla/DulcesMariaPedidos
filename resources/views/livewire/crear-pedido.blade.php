@@ -53,7 +53,10 @@
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
-          
+            {{-- @foreach ($decoracions as $decoracion)
+                <option value="{{ $decoracion->id }}">{{$decoracion->decoracion}}</option>
+                
+            @endforeach --}}
         </select>
         
 
@@ -69,7 +72,10 @@
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
-            
+            {{-- @foreach ($medida_cakes as $medida)
+                <option value="{{ $medida->id }}">{{$medida->medida}}</option>
+                
+            @endforeach --}}
         </select>
 
         <x-input-error :messages="$errors->get('medida')" class="mt-2" />
@@ -157,7 +163,10 @@
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
         <option>-- Seleccione --</option>
-      
+        {{-- @foreach ($medio_contactos as $contacto)
+            <option value="{{ $contacto->id }}">{{$contacto->contacto}}</option>
+            
+        @endforeach --}}
         </select>
 
         <x-input-error :messages="$errors->get('me_contacto')" class="mt-2" />
