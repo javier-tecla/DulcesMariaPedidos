@@ -176,7 +176,7 @@
     <div>
         <x-input-label for="nota" :value="__('Nota de Observación')" />
         <textarea 
-                name="nota" 
+                wire:model="nota" 
                 Placeholder="Nota de Observación"
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full h-72"
         /></textarea>

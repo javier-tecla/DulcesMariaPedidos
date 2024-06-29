@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\CakeMedida;
 use App\Models\Decoracion;
 use App\Models\MedioContacto;
-
+use App\Models\Pedido;
 
 class CrearPedido extends Component
 {
@@ -41,7 +41,27 @@ class CrearPedido extends Component
 
     public function crearPedido()
     {
-        $this->validate();
+       $datos = $this->validate();
+
+        // Crear el Pedido
+        Pedido::create([
+            'nombre_del_cake' => $datos['nombre_del_cake'],
+            'sabor' => $datos['sabor'],
+            'relleno' => $datos['relleno'],
+            'decoracion_del_cake_id' => $datos['decoracion_del_cake'],
+            'medida_del_cake_id' => $datos['medida_del_cake'],
+            'fecha_entrega' => $datos['fecha_entrega'],
+            'nombre_del_cliente' => $datos['nombre_del_cliente'],
+            'telefono' => $datos['telefono'],
+            'precio' => $datos['precio'],
+            'hora' => $datos['hora'],
+            'me_contacto_id' => $datos['me_contacto'],
+            'nota' => $datos['nota'],
+        ]);
+
+        // Crear un mensaje
+
+        // Redireccionar al usuario
     }
 
     public function render()
