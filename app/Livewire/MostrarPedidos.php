@@ -9,7 +9,7 @@ class MostrarPedidos extends Component
 {
     public function render()
     {
-        $pedidos = Pedido::paginate(10);
+        $pedidos = Pedido::paginate(5);
 
         return view('livewire.mostrar-pedidos', [
             'pedidos' => $pedidos
