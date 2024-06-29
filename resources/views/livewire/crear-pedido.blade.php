@@ -1,17 +1,17 @@
-<form class="md:w-1/2 space-y-5">
+<form class="md:w-1/2 space-y-5" wire:submit.prevent='crearPedido'>
     <div>
-        <x-input-label for="cake" :value="__('Nombre del Cake')" />
+        <x-input-label for="nombre_del_cake" :value="__('Nombre del Cake')" />
 
         <x-text-input 
-                id="cake" 
+                id="nombre_del_cake" 
                 class="block mt-1 w-full" 
                 type="text" 
-                wire:model="cake" 
-                :value="old('cake')"
+                wire:model="nombre_del_cake" 
+                :value="old('nombre_del_cake')"
                 Placeholder="Nombre del Cake" 
         />
 
-        <x-input-error :messages="$errors->get('cake')" class="mt-2" />
+        <x-input-error :messages="$errors->get('nombre_del_cake')" class="mt-2" />
     </div>
 
     <div>
@@ -46,10 +46,10 @@
     </div>
 
     <div>
-        <x-input-label for="decoracion" :value="__('Decoración de Cake')" />
+        <x-input-label for="decoracion_del_cake" :value="__('Decoración de Cake')" />
         <select
-                id="decoracion" 
-                wire:model="decoracion" 
+                id="decoracion_del_cake" 
+                wire:model="decoracion_del_cake" 
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
@@ -60,15 +60,15 @@
         </select>
         
 
-        <x-input-error :messages="$errors->get('decoracion')" class="mt-2" />
+        <x-input-error :messages="$errors->get('decoracion_del_cake')" class="mt-2" />
     </div>
 
     <div>
-        <x-input-label for="cake_size" :value="__('Medida del Cake')" />
+        <x-input-label for="medida_del_cake" :value="__('Medida del Cake')" />
 
         <select
-                id="cake_size" 
-                wire:model="cake_size" 
+                id="medida_del_cake" 
+                wire:model="medida_del_cake" 
                 class="border-gray-300 focus:border-rose-400 focus:ring-rose-100 rounded-md shadow-sm w-full"
         >
             <option>-- Seleccione --</option>
@@ -78,7 +78,7 @@
             @endforeach
         </select>
 
-        <x-input-error :messages="$errors->get('medida')" class="mt-2" />
+        <x-input-error :messages="$errors->get('medida_del_cake')" class="mt-2" />
     </div>
 
     <div>
@@ -96,18 +96,18 @@
     </div>
 
     <div>
-        <x-input-label for="cliente" :value="__('Nombre del Cliente')" />
+        <x-input-label for="nombre_del_cliente" :value="__('Nombre del Cliente')" />
 
         <x-text-input 
-                id="cliente" 
+                id="nombre_del_cliente" 
                 class="block mt-1 w-full" 
                 type="text" 
-                wire:model="cliente" 
-                :value="old('cliente')"
+                wire:model="nombre_del_cliente" 
+                :value="old('nombre_del_cliente')"
                 Placeholder="Nombre del Cliente" 
         />
 
-        <x-input-error :messages="$errors->get('cliente')" class="mt-2" />
+        <x-input-error :messages="$errors->get('nombre_del_cliente')" class="mt-2" />
     </div>
 
     <div>
@@ -122,7 +122,7 @@
                 Placeholder="Telefono de Contacto" 
         />
 
-        <x-input-error :messages="$errors->get('cliente')" class="mt-2" />
+        <x-input-error :messages="$errors->get('telefono')" class="mt-2" />
     </div>
 
     <div>
