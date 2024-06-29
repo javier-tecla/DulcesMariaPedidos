@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pedido;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -41,9 +42,11 @@ class PedidoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pedido $pedido)
     {
-        //
+        return view('pedidos.edit', [
+            'pedido' => $pedido
+        ]);
     }
 
     /**
