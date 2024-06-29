@@ -60,8 +60,10 @@ class CrearPedido extends Component
         ]);
 
         // Crear un mensaje
+        session()->flash('mensaje', 'El Pedido se agrego correctamente');
 
         // Redireccionar al usuario
+        return redirect()->route('pedidos.index');
     }
 
     public function render()
