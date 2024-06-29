@@ -9,6 +9,12 @@ class Pedido extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'fecha_entrega'=>'date',
+        'hora' => 'datetime:h:i A',
+    ];
+    
+
     protected $fillable = [
         'nombre_del_cake',
         'sabor',
