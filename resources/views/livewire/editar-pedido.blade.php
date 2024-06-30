@@ -185,7 +185,7 @@
     </div>
 
     <x-primary-button>
-        Crear Pedido
+        Guardar Cambios
     </x-primary-button>
 
 

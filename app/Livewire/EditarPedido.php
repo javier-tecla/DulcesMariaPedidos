@@ -2,13 +2,44 @@
 
 namespace App\Livewire;
 
+use App\Models\Pedido;
 use Livewire\Component;
 use App\Models\CakeMedida;
 use App\Models\Decoracion;
 use App\Models\MedioContacto;
+use Illuminate\Support\Carbon;
 
 class EditarPedido extends Component
 {
+    public $nombre_del_cake;
+    public $sabor;
+    public $relleno;
+    public $decoracion_del_cake;
+    public $medida_del_cake;
+    public $fecha_entrega;
+    public $nombre_del_cliente;
+    public $telefono;
+    public $precio;
+    public $hora;
+    public $me_contacto;
+    public $nota;
+
+    public function mount(Pedido $pedido)
+    {
+        $this->nombre_del_cake = $pedido->nombre_del_cake;
+        $this->sabor = $pedido->sabor;
+        $this->relleno = $pedido->relleno;
+        $this->decoracion_del_cake = $pedido->decoracion_del_cake_id;
+        $this->medida_del_cake = $pedido->medida_del_cake_id;
+        $this->fecha_entrega = Carbon::parse($pedido->fecha_entrega)->format('Y-m-d');
+        $this->nombre_del_cliente = $pedido->nombre_del_cliente;
+        $this->telefono = $pedido->telefono;
+        $this->precio = $pedido->precio;
+        $this->hora = Carbon::parse($pedido->hora)->format('H:i:s');
+        $this->me_contacto = $pedido->me_contacto_id;
+        $this->nota = $pedido->nota;
+    }
+
     public function render()
     {
               // Consultar BD
