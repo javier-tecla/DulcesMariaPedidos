@@ -1,4 +1,4 @@
-<form class="md:w-1/2 space-y-5" wire:submit.prevent='crearPedido'>
+<form class="md:w-1/2 space-y-5" wire:submit.prevent='editarPedido'>
     <div>
         <x-input-label for="nombre_del_cake" :value="__('Nombre del Cake')" />
 

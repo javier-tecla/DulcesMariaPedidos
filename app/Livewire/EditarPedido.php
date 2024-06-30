@@ -24,6 +24,21 @@ class EditarPedido extends Component
     public $me_contacto;
     public $nota;
 
+    protected $rules = [
+        'nombre_del_cake' => 'required|string',
+        'sabor' => 'required|string',
+        'relleno' => 'required|string',
+        'decoracion_del_cake' => 'required',
+        'medida_del_cake' => 'required',
+        'fecha_entrega' => 'required|date',
+        'nombre_del_cliente' => 'required',
+        'telefono' => 'required|regex:/^[0-9]{1,15}$/',
+        'precio' => 'required|numeric|min:0',
+        'hora' => 'required',
+        'me_contacto' => 'required',
+        'nota' => 'required|string'
+    ];
+
     public function mount(Pedido $pedido)
     {
         $this->nombre_del_cake = $pedido->nombre_del_cake;
@@ -38,6 +53,11 @@ class EditarPedido extends Component
         $this->hora = Carbon::parse($pedido->hora)->format('H:i:s');
         $this->me_contacto = $pedido->me_contacto_id;
         $this->nota = $pedido->nota;
+    }
+    
+    public function editarPedido()
+    {
+        $datos = $this->validate();
     }
 
     public function render()
