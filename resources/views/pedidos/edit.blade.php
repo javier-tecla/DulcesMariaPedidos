@@ -12,7 +12,7 @@
                     <h1 class="text-2xl font-bold text-center my-10">Editar Pedido: {{ $pedido->nombre_del_cake }}</h1>
 
                     <div class="md:flex md:justify-center p-5">
-                       
+                       <livewire:editar-pedido />
                     </div>
 
                 </div>
