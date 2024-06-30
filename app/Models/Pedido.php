@@ -29,4 +29,19 @@ class Pedido extends Model
         'me_contacto_id',
         'nota',
     ];
+
+    public function decoracion_del_cake()
+    {
+        return $this->belongsTo(Decoracion::class);
+    }
+
+    public function medida_del_cake()
+    {
+        return $this->belongsTo(CakeMedida::class);
+    }
+
+    public function me_contacto()
+    {
+        return $this->belongsTo(MedioContacto::class);
+    }
 }

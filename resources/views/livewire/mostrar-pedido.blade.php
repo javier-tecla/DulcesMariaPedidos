@@ -27,12 +27,37 @@
 
             <p class="font-bold text-sm uppercase text-gray-800 my-3">
                 Me Contactó por:
-                <span class="normal-case font-normal"> {{ $pedido->me_contacto_id }}</span>
+                <span class="normal-case font-normal"> {{ $pedido->me_contacto->contacto }}</span>
             </p>
 
             <p class="font-bold text-sm uppercase text-gray-800 my-3">
                 Precio:
                 <span class="normal-case font-normal"> ${{ $pedido->precio }}</span>
+            </p>
+
+            <p class="font-bold text-sm uppercase text-gray-800 my-3">
+                Sabor:
+                <span class="normal-case font-normal"> {{ $pedido->sabor }}</span>
+            </p>
+
+            <p class="font-bold text-sm uppercase text-gray-800 my-3">
+                Relleno:
+                <span class="normal-case font-normal"> {{ $pedido->relleno }}</span>
+            </p>
+
+            <p class="font-bold text-sm uppercase text-gray-800 my-3">
+                Decoración:
+                <span class="normal-case font-normal"> {{ $pedido->decoracion_del_cake->decoracion }}</span>
+            </p>
+
+            <p class="font-bold text-sm uppercase text-gray-800 my-3">
+                Medida:
+                <span class="normal-case font-normal"> {{ $pedido->medida_del_cake->medida}}</span>
+            </p>
+
+            <p class="font-bold text-sm uppercase text-gray-800 my-3">
+                Nota:
+                <span class="normal-case font-normal"> {{ $pedido->nota}}</span>
             </p>
         </div>
    </div>
