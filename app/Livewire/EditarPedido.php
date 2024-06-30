@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 
 class EditarPedido extends Component
 {
+    public $pedido_id;
     public $nombre_del_cake;
     public $sabor;
     public $relleno;
@@ -41,6 +42,7 @@ class EditarPedido extends Component
 
     public function mount(Pedido $pedido)
     {
+        $this->pedido_id = $pedido->id;
         $this->nombre_del_cake = $pedido->nombre_del_cake;
         $this->sabor = $pedido->sabor;
         $this->relleno = $pedido->relleno;
@@ -58,6 +60,31 @@ class EditarPedido extends Component
     public function editarPedido()
     {
         $datos = $this->validate();
+
+        // Encontrar el pedido a editar
+        $pedido = Pedido::find($this->pedido_id);
+
+        // Asignar los valores
+        $pedido->nombre_del_cake = $datos['nombre_del_cake'];
+        $pedido->sabor = $datos['sabor'];
+        $pedido->relleno = $datos['relleno'];
+        $pedido->decoracion_del_cake_id = $datos['decoracion_del_cake'];
+        $pedido->medida_del_cake_id = $datos['medida_del_cake'];
+        $pedido->fecha_entrega = $datos['fecha_entrega'];
+        $pedido->nombre_del_cliente = $datos['nombre_del_cliente'];
+        $pedido->telefono = $datos['telefono'];
+        $pedido->precio = $datos['precio'];
+        $pedido->hora = $datos['hora'];
+        $pedido->me_contacto_id = $datos['me_contacto'];
+        $pedido->nota = $datos['nota'];
+
+        // Guardar el pedido
+        $pedido->save();
+
+        // Redireccionar
+        session()->flash('mensaje', 'El Pedido se actualizó Correctamente');
+
+        return redirect()->route('pedidos.index');
     }
 
     public function render()
