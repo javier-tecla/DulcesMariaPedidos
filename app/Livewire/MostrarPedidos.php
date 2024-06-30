@@ -7,6 +7,13 @@ use Livewire\Component;
 
 class MostrarPedidos extends Component
 {
+    protected $listeners = ['eliminarPedido'];
+
+   public function eliminarPedido( Pedido $pedido )
+   {
+        $pedido->delete();
+   }
+
     public function render()
     {
         $pedidos = Pedido::paginate(5);

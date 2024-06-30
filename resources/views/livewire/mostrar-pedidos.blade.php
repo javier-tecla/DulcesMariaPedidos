@@ -30,9 +30,11 @@
                         Editar
                     </a>
 
-                    <a href="#" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
+                    <button 
+                        wire:click="$dispatch('mostrarAlerta', {{ $pedido->id }})"
+                        class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                         Eliminar
-                    </a>
+                    </button>
                 </div>
             </div>
         @empty
@@ -51,24 +53,31 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
-            Swal.fire({
-            title: "Eliminar Pedido?",
-            text: "Un pedido eliminado no se puede recuperar!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, Eliminar!",
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
+            Livewire.on('mostrarAlerta', pedidoId => {
                 Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
+                title: "Eliminar Pedido?",
+                text: "Un pedido eliminado no se puede recuperar!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, Eliminar!",
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                    if (result.isConfirmed) {
+                        // eliminar el pedido
+                        Livewire.dispatch('eliminarPedido', pedidoId)
+
+                      Swal.fire({
+                        title: "Se eliminó el Pedido!",
+                        text: "Eliminado Correctamente",
+                        icon: "success"
                 });
             }
         });
+    });
+
+          
         </script>
         
     @endpush
