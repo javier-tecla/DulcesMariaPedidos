@@ -53,10 +53,14 @@
             <p class="font-bold text-sm uppercase text-gray-800 my-3">
                 Medida:
                 <span class="normal-case font-normal"> {{ $pedido->medida_del_cake->medida}}</span>
-            </p>
+            </p>  
+        </div>
 
+        <div>
+            <h2 class="text-2xl font-bold mb-5">
+                Observación
+            </h2>
             <p class="font-bold text-sm uppercase text-gray-800 my-3">
-                Nota:
                 <span class="normal-case font-normal"> {{ $pedido->nota}}</span>
             </p>
         </div>
