@@ -23,15 +23,19 @@
                         Ver Pedido
                     </a>
 
+                    @can('update', $pedido)
                     <a href="{{ route('pedidos.edit', $pedido->id) }}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                         Editar
                     </a>
+                    @endcan
 
+                    @can('delete', $pedido)
                     <button 
                         wire:click="$dispatch('mostrarAlerta', {{ $pedido->id }})"
                         class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                         Eliminar
                     </button>
+                    @endcan
                 </div>
             </div>
         @empty

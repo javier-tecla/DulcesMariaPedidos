@@ -17,9 +17,11 @@
                             {{ __('Mis Pedidos') }}
                         </x-nav-link>
 
+                     @if(auth()->user()->admin)
                         <x-nav-link :href="route('pedidos.create')" :active="request()->routeIs('pedidos.create')">
-                            {{ __('Crear Pedidos') }}
+                            {{ __('Crear Pedido') }}
                         </x-nav-link>
+                    @endif
                     </div>
                 @endauth
             </div>
@@ -94,7 +96,7 @@
                 </x-responsive-nav-link>
 
                 <x-responsive-nav-link :href="route('pedidos.create')" :active="request()->routeIs('pedidos.create')">
-                    {{ __('Crear Pedidos') }}
+                    {{ __('Crear Pedido') }}
                 </x-responsive-nav-link>
             </div>
 

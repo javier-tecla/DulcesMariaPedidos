@@ -2,12 +2,19 @@
 
 namespace App\Providers;
 
+use App\Models\Pedido;
+use App\Policies\PedidoPolicy;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    protected $policies = [
+        Pedido::class => PedidoPolicy::class,
+    ];
+
+
     /**
      * Register any application services.
      */

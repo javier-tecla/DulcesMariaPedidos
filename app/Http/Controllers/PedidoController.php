@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PedidoController extends Controller
 {
@@ -20,6 +21,8 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        Gate::authorize('create', Pedido::class);
+
         return view('pedidos.create');
     }
 
@@ -38,6 +41,8 @@ class PedidoController extends Controller
      */
     public function edit(Pedido $pedido)
     {
+        Gate::authorize('update', $pedido);
+
         return view('pedidos.edit', [
             'pedido' => $pedido
         ]);
