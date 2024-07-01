@@ -4,7 +4,7 @@
             {{ $pedido->nombre_del_cake}}
         </h3>
 
-        <div class="md:grid md:grid-cols-2 bg-gray-50 p-4 my-10">
+        <div class="md:grid md:grid-cols-2 bg-gray-50 p-4 my-10 rounded-lg">
             <p class="font-bold text-sm uppercase text-gray-800 my-3">
                 Nombre del Cliente:
                 <span class="normal-case font-normal">{{$pedido->nombre_del_cliente}}</span>
