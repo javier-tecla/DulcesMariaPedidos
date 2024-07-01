@@ -8,17 +8,10 @@
                     <a href="{{ route('pedidos.show', $pedido->id )}}" class="text-xl font-bold">
                         {{ $pedido->nombre_del_cake }}
                     </a>
-                    {{-- <p class="text-sm text-gray-600"><span class="font-bold">Sabor:</span> {{ $pedido->sabor }}</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Relleno:</span> {{ $pedido->relleno }}</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Decoración:</span> {{ $pedido->decoracion_del_cake_id }}</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Medida:</span> {{ $pedido->medida_del_cake_id }}</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Nota:</span> {{ Illuminate\Support\str::limit($pedido->nota, 30) }}</p> --}}
                     <p class="text-sm text-gray-600"><span class="font-bold">Nombre Cliente:</span> {{ $pedido->nombre_del_cliente }}</p>
                     <p class="text-sm text-gray-600"><span class="font-bold">Telefono:</span> {{ $pedido->telefono }}</p>
                     <p class="text-sm text-gray-600"><span class="font-bold">Fecha de Entrega:</span> {{ $pedido->fecha_entrega->format('d/m/Y') }}</p>
                     <p class="text-sm text-gray-600"><span class="font-bold">Hora de Entrega:</span> {{ $pedido->hora->format('h:i A') }}</p>
-                    {{-- <p class="text-sm text-gray-600"><span class="font-bold">Precio:</span> ${{ $pedido->precio }}</p> --}}
-                    {{-- <p class="text-sm text-gray-600"><span class="font-bold">Medio de Contacto:</span> {{ $pedido->me_contacto_id }}</p> --}}
                 </div>
 
                 
@@ -26,6 +19,10 @@
                 
 
                 <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
+                    <a href="{{ route('pedidos.show', $pedido->id ) }}" class="bg-rose-500 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
+                        Ver Pedido
+                    </a>
+
                     <a href="{{ route('pedidos.edit', $pedido->id) }}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                         Editar
                     </a>
