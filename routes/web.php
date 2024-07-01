@@ -13,6 +13,7 @@ Route::get('/pedidos/create', [PedidoController::class, 'create'])->middleware([
 Route::get('/pedidos/{pedido}/edit', [PedidoController::class, 'edit'])->middleware(['auth', 'verified'])->name('pedidos.edit');
 Route::get('/pedidos/{pedido}', [PedidoController::class, 'show'])->name('pedidos.show');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -48,5 +48,20 @@ class PedidoController extends Controller
         ]);
     }
 
+    public function destroy($id)
+    {
+        // Autorizar la acción
+        Gate::authorize('delete', Pedido::class);
+
+        // Encontrar el pedido por ID
+        $pedido = Pedido::findOrFail($id);
+
+        // Eliminar el pedido
+        $pedido->delete();
+
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('pedidos.index')->with('success', 'Pedido eliminado exitosamente.');
+    }
+
    
 }

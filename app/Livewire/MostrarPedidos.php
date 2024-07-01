@@ -9,8 +9,9 @@ class MostrarPedidos extends Component
 {
     protected $listeners = ['eliminarPedido'];
 
-   public function eliminarPedido( Pedido $pedido )
+   public function eliminarPedido($pedidoId)
    {
+        $pedido = Pedido::findOrFail($pedidoId);
         $pedido->delete();
    }
 
