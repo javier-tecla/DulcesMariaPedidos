@@ -31,7 +31,7 @@
 
                     @can('delete', $pedido)
                     <button 
-                        wire:click="$dispatch('mostrarAlerta', {{ $pedido->id }})"
+                        wire:click="$dispatch('mostrarAlerta', { id: {{ $pedido->id }} })"
                         class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                         Eliminar
                     </button>
@@ -53,7 +53,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
-            Livewire.on('mostrarAlerta', pedidoId => {
+            Livewire.on('mostrarAlerta', data => {
                 Swal.fire({
                 title: "Eliminar Pedido?",
                 text: "Un pedido eliminado no se puede recuperar!",
@@ -66,7 +66,7 @@
             }).then((result) => {
                     if (result.isConfirmed) {
                         // eliminar el pedido
-                        Livewire.dispatch('eliminarPedido', pedidoId)
+                        Livewire.dispatch('eliminarPedido', { id: data.id })
 
                       Swal.fire({
                         title: "Se eliminó el Pedido!",
@@ -75,9 +75,6 @@
                 });
             }
         });
-    });
-
-          
-        </script>
-        
-    @endpush
+    });   
+ </script>
+        @endpush

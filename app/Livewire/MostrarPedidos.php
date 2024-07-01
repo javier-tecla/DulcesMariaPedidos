@@ -12,9 +12,9 @@ class MostrarPedidos extends Component
 
     protected $listeners = ['eliminarPedido'];
 
-   public function eliminarPedido($pedidoId)
+   public function eliminarPedido($id)
    {
-        $pedido = Pedido::findOrFail($pedidoId);
+        $pedido = Pedido::findOrFail($id);
         $pedido->delete();
 
          // Mostrar un mensaje de confirmación
